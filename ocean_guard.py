@@ -7,7 +7,7 @@ openai.api_key = 'sk-proj-PPFR7e7REzo6QHCkoa8hWUp_nKUup6MBF4x2M3TCDeuEPJfTzElb7L
 # Function to interact with the ChatGPT API
 def generate_response(prompt):
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="gpt-4o-mini",
         prompt=prompt,
         max_tokens=150,
         temperature=0.7,
@@ -18,10 +18,10 @@ def generate_response(prompt):
     return message
 
 # Streamlit app UI
-st.title("OceanGuardian: Conversational Ecosystem Protector")
+st.title("OceanGuard: Conversational Ecosystem Protector")
 
 st.markdown("""
-Welcome to OceanGuardian! Explore the impact of various environmental actions on underwater ecosystems.
+Welcome to OceanGuard! Explore the impact of various environmental actions on underwater ecosystems.
 Choose a scenario, ask "What if?" questions, and see the outcomes.
 """)
 
@@ -34,7 +34,7 @@ scenario = st.selectbox("Choose a scenario to explore:", [
 ])
 
 # Input prompt
-user_input = st.text_input("Ask OceanGuardian about this scenario:")
+user_input = st.text_input("Ask OceanGuard about this scenario:")
 
 if st.button("Submit"):
     if user_input:
